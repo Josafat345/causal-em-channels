@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causal-em-channels"
+version = "0.1.0"
+description = "Modelos causales de canales electromagneticos espacio-temporales"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "scipy>=1.13",
+    "sympy>=1.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.9",
+]
+notebook = [
+    "ipykernel>=6.29",
+    "jupyterlab>=4.0",
+]
+optimization = [
+    "cvxpy>=1.6",
+]
+
+[project.scripts]
+causal-em-first = "causal_em.experiments.first_experiment:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
