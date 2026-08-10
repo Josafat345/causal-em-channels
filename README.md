@@ -113,3 +113,12 @@ El comando `causal-em-first` guarda figuras y un resumen JSON en
 
 La derivación y el alcance de este primer modelo se documentan en
 `docs/01_modelo_lorentz_floquet.md`.
+
+## Marco teórico y ruta de estudio
+
+El marco matemático y físico completo del proyecto —Maxwell, respuesta causal de
+dos tiempos, dispersión Lorentz–Drude, Floquet, energía del bombeo, reciprocidad,
+ruido ciclostacionario, canal MIMO y capacidad— está en
+[`docs/03_marco_teorico.md`](docs/03_marco_teorico.md). Incluye un diagnóstico de
+prerrequisitos, una ruta de nivelación de dieciséis semanas y bibliografía primaria
+actualizada hasta agosto de 2026.
