@@ -131,8 +131,8 @@ $$
 
 Por tanto, un fasor positivo evoluciona como $e^{-\mathrm{i}\omega t}$. Con esta
 convención, una respuesta causal estable es analítica en el semiplano
-$\operatorname{Im}\omega>0$, y un material pasivo ordinario satisface
-$\operatorname{Im}\chi(\omega)\ge 0$ para $\omega>0$.
+$\mathrm{Im}\,\omega>0$, y un material pasivo ordinario satisface
+$\mathrm{Im}\,\chi(\omega)\ge 0$ para $\omega>0$.
 
 ### 2.2 Símbolos principales
 
@@ -384,7 +384,7 @@ Si $\gamma>0$ y $\omega_0>0$, sus polos se encuentran estrictamente en el
 semiplano inferior y, para $\omega>0$,
 
 $$
-\operatorname{Im}\chi_L(\omega)
+\mathrm{Im}\,\chi_L(\omega)
 =\frac{\omega_p^2\gamma\omega}
 {(\omega_0^2-\omega^2)^2+\gamma^2\omega^2}
 \ge 0.
@@ -475,9 +475,9 @@ $$
 =\int_0^\infty\chi(\tau)e^{\mathrm{i}\omega\tau}\,d\tau
 $$
 
-converge y es analítica cuando $\operatorname{Im}\omega>0$. Si la respuesta crece
+converge y es analítica cuando $\mathrm{Im}\,\omega>0$. Si la respuesta crece
 como $e^{at}$, la integral converge inicialmente solo para
-$\operatorname{Im}\omega>a$; las respuestas no integrables deben tratarse mediante
+$\mathrm{Im}\,\omega>a$; las respuestas no integrables deben tratarse mediante
 una transformada Fourier–Laplace y valores frontera distribucionales. La
 analiticidad, junto con el comportamiento asintótico apropiado, conduce a relaciones
 de dispersión.
@@ -487,18 +487,18 @@ de dispersión.
 Para una susceptibilidad escalar que tiende a cero con suficiente rapidez,
 
 $$
-\operatorname{Re}\chi(\omega)
+\mathrm{Re}\,\chi(\omega)
 =\frac{1}{\pi}\mathcal P
 \int_{-\infty}^{\infty}
-\frac{\operatorname{Im}\chi(\omega')}
+\frac{\mathrm{Im}\,\chi(\omega')}
 {\omega'-\omega}\,d\omega',
 $$
 
 $$
-\operatorname{Im}\chi(\omega)
+\mathrm{Im}\,\chi(\omega)
 =-\frac{1}{\pi}\mathcal P
 \int_{-\infty}^{\infty}
-\frac{\operatorname{Re}\chi(\omega')}
+\frac{\mathrm{Re}\,\chi(\omega')}
 {\omega'-\omega}\,d\omega'.
 $$
 
@@ -511,18 +511,18 @@ $$
 y las relaciones pueden escribirse para $\omega>0$ como
 
 $$
-\operatorname{Re}\chi(\omega)
+\mathrm{Re}\,\chi(\omega)
 =\frac{2}{\pi}\mathcal P
 \int_0^\infty
-\frac{\omega'\operatorname{Im}\chi(\omega')}
+\frac{\omega'\,\mathrm{Im}\,\chi(\omega')}
 {\omega'^2-\omega^2}\,d\omega',
 $$
 
 $$
-\operatorname{Im}\chi(\omega)
+\mathrm{Im}\,\chi(\omega)
 =-\frac{2\omega}{\pi}\mathcal P
 \int_0^\infty
-\frac{\operatorname{Re}\chi(\omega')}
+\frac{\mathrm{Re}\,\chi(\omega')}
 {\omega'^2-\omega^2}\,d\omega'.
 $$
 
@@ -585,7 +585,7 @@ Hilbert. En un medio periódico también pueden aplicarse a cada
 $\mathbf H_n(z)$ bajo las hipótesis de regularidad. No se imponen independientemente
 en ambos argumentos de $\boldsymbol\chi(\omega,\omega')$ ni a una "permitividad
 instantánea". Además, fuera del equilibrio,
-$\operatorname{Im}\chi$ ya no puede interpretarse por sí sola como absorción total,
+$\mathrm{Im}\,\chi$ ya no puede interpretarse por sí sola como absorción total,
 porque existe transferencia de energía entre la señal y el accionamiento externo.
 Una derivación microscópica moderna de esta respuesta se encuentra en
 [Sloan et al. (2024)](https://doi.org/10.1021/acsphotonics.3c00773).
@@ -598,7 +598,7 @@ Un modelo numérico deberá superar, como mínimo:
    para $t<t'$.
 2. **Composición:** $U(t,s)=U(t,u)U(u,s)$ para $t\ge u\ge s$.
 3. **Analiticidad:** los polos de un modelo LTI racional y exponencialmente estable
-   deben satisfacer $\operatorname{Im}\omega_p<0$ con nuestra convención; los polos
+   deben satisfacer $\mathrm{Im}\,\omega_p<0$ con nuestra convención; los polos
    reales de límites ideales requieren un tratamiento separado.
 4. **Kramers–Kronig:** las partes real e imaginaria deben reconstruirse dentro de
    una banda interior, controlando truncamiento y colas espectrales.
@@ -1027,7 +1027,7 @@ $\mu_j$ satisfacen
 $$
 \lambda_j=e^{\mu_jT_m},
 \qquad
-\mu_j=\frac{1}{T_m}\operatorname{Log}\lambda_j.
+\mu_j=\frac{1}{T_m}\,\mathrm{Log}\,\lambda_j.
 $$
 
 El logaritmo es multivaluado:
@@ -1042,7 +1042,7 @@ Con la convención ondulatoria puede introducirse la cuasifrecuencia
 $$
 \lambda_j=e^{-\mathrm{i}\omega_{F,j}T_m},
 \qquad
-\omega_{F,j}=\frac{\mathrm{i}}{T_m}\operatorname{Log}\lambda_j
+\omega_{F,j}=\frac{\mathrm{i}}{T_m}\,\mathrm{Log}\,\lambda_j
 \pmod{\Omega_m}.
 $$
 
@@ -1111,7 +1111,7 @@ Para un sistema matricial,
 $$
 \det\mathbf M
 =\exp\left(
-\int_0^{T_m}\operatorname{tr}\mathbf A(t)\,dt
+\int_0^{T_m}\mathrm{tr}\,\mathbf A(t)\,dt
 \right).
 $$
 
@@ -1659,7 +1659,7 @@ $$
 S_{VV}^{\mathrm{sym}}(\omega)
 =\hbar\omega
 \coth\left(\frac{\hbar\omega}{2k_{\mathrm B}T_{\mathrm b}}\right)
-\operatorname{Re}Z(\omega),
+\,\mathrm{Re}\,Z(\omega),
 $$
 
 con la convención espectral indicada al comienzo. En el límite clásico,
@@ -1673,7 +1673,7 @@ se obtiene
 $$
 S_{VV}^{\mathrm{sym}}(\omega)
 \longrightarrow
-2k_{\mathrm B}T_{\mathrm b}\operatorname{Re}Z(\omega).
+2k_{\mathrm B}T_{\mathrm b}\,\mathrm{Re}\,Z(\omega).
 $$
 
 Para un resistor, el espectro unilateral por hertz es
@@ -1864,11 +1864,11 @@ $$
 Vectorizando,
 
 $$
-\operatorname{vec}\boldsymbol\Sigma_0
+\mathrm{vec}\,\boldsymbol\Sigma_0
 =\left[
 \mathbf I-\mathbf M^*\otimes\mathbf M
 \right]^{-1}
-\operatorname{vec}\mathbf Q_T.
+\,\mathrm{vec}\,\mathbf Q_T.
 $$
 
 La estabilidad estricta
@@ -2181,7 +2181,7 @@ $$
 sujeta a
 
 $$
-\operatorname{tr}(\mathbf W\mathbf Q)\le P,
+\mathrm{tr}\,(\mathbf W\mathbf Q)\le P,
 \qquad
 \mathbf W\succ0.
 $$
@@ -2203,7 +2203,7 @@ Su descomposición singular es
 $$
 \mathbf G=\mathbf U\boldsymbol\Sigma\mathbf V^\dagger,
 \qquad
-\boldsymbol\Sigma=\operatorname{diag}(\sigma_1,\ldots,\sigma_r).
+\boldsymbol\Sigma=\mathrm{diag}(\sigma_1,\ldots,\sigma_r).
 $$
 
 Con canal y ruido fijos y una única restricción de traza, la potencia óptima se
@@ -2240,7 +2240,7 @@ maximizada sobre $\mathbf Q(\omega)\succeq0$ con
 $$
 \frac{1}{2\pi}
 \int_{\mathcal B_F}
-\operatorname{tr}
+\mathrm{tr}\,
 [\mathbf W(\omega)\mathbf Q(\omega)]\,d\omega
 \le P_{\mathrm{sig}}.
 $$
@@ -2337,7 +2337,7 @@ donde $T_{\mathrm{obs}}=N_h\Delta t$ y la tasa queda en bits por segundo. Para
 vectores reales aparece el factor $1/2$. Una restricción posible es
 
 $$
-\operatorname{tr}(\mathbf W_{N_h}\mathbf K_X)
+\mathrm{tr}\,(\mathbf W_{N_h}\mathbf K_X)
 \le E_{N_h}.
 $$
 
@@ -2445,12 +2445,12 @@ En ciertas cotas de respuesta absorbente para sistemas pasivos, locales y LTI
 aparecen figuras como
 
 $$
-\frac{|\chi(\omega)|^2}{\operatorname{Im}\chi(\omega)}.
+\frac{|\chi(\omega)|^2}{\mathrm{Im}\,\chi(\omega)}.
 $$
 
 En un medio temporal, $\chi$ es un operador de dos frecuencias. Sustituir
 directamente la figura escalar no es válido, y cuando
-$\operatorname{Im}\chi\to0$ pueden dominar límites radiativos o de unitariedad. Una
+$\mathrm{Im}\,\chi\to0$ pueden dominar límites radiativos o de unitariedad. Una
 posible contribución matemática es derivar cotas en términos de la parte
 antihermítica del operador $\boldsymbol\chi(\omega,\omega')$ y del trabajo de
 bombeo.
@@ -3058,7 +3058,7 @@ $$
 \chi(z)=\int_0^\infty\chi(t)e^{\mathrm izt}\,dt
 $$
 
-es analítica para $\operatorname{Im}z>0$ y obtener una relación de
+es analítica para $\mathrm{Im}\,z>0$ y obtener una relación de
 Kramers–Kronig mediante Cauchy.
 
 **Si obtienes 0:** repasa funciones analíticas, residuos y valor principal.
@@ -3097,7 +3097,7 @@ de estado.
 Debes calcular numéricamente una monodromía, verificar Liouville y explicar por qué
 
 $$
-\mu_j=\frac1{T_m}\operatorname{Log}\lambda_j
+\mu_j=\frac1{T_m}\,\mathrm{Log}\,\lambda_j
 $$
 
 tiene ramas. Debes reproducir el umbral aproximado $m>4\zeta$.
