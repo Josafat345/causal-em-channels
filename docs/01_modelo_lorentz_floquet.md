@@ -127,11 +127,11 @@ los módulos, no con una elección arbitraria de rama.
 
 ## 6. Identidad exacta de Liouville
 
-Como $\operatorname{tr}A(\tau)=-2\zeta$,
+Como $\mathrm{tr}\,A(\tau)=-2\zeta$,
 
 $$
 \det M
-=\exp\left(\int_0^T\operatorname{tr}A(s)\,ds\right)
+=\exp\left(\int_0^T\mathrm{tr}\,A(s)\,ds\right)
 =\exp(-2\zeta T).
 $$
 
