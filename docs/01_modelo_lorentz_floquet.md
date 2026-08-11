@@ -11,11 +11,11 @@ energía en un sistema pequeño con referencias analíticas exactas.
 
 Consideramos una polarización escalar $P(t)$:
 
-$$
+```math
 \ddot P+\gamma\dot P
 +\omega_0^2\left[1+m\cos(\Omega_m t+\phi)\right]P
 =\varepsilon_0\omega_p^2 E(t).
-$$
+```
 
 La modulación actúa sobre la frecuencia de resonancia. Su mecanismo físico
 microscópico y su costo energético se incorporarán explícitamente en una etapa
@@ -26,19 +26,19 @@ conocido.
 
 Usando
 
-$$
+```math
 \tau=\omega_0t,\qquad
 \zeta=\frac{\gamma}{2\omega_0},\qquad
 \nu=\frac{\Omega_m}{\omega_0},
-$$
+```
 
 y absorbiendo la escala del forzamiento en $f(\tau)$, obtenemos
 
-$$
+```math
 p''+2\zeta p'+k(\tau)p=f(\tau),
 \qquad
 k(\tau)=1+m\cos(\nu\tau+\phi).
-$$
+```
 
 En el primer hito imponemos $|m|<1$, de modo que $k(\tau)>0$. Esto no es una
 necesidad matemática general, sino una restricción física conservadora para el
@@ -48,15 +48,15 @@ prototipo.
 
 Con
 
-$$
+```math
 \mathbf{x}(\tau)=
 \begin{pmatrix}p(\tau)\\v(\tau)\end{pmatrix},
 \qquad v(\tau)=p'(\tau),
-$$
+```
 
 la ecuación de estado es
 
-$$
+```math
 \mathbf{x}'=A(\tau)\mathbf{x}+\mathbf{b}f(\tau),\qquad
 A(\tau)=
 \begin{pmatrix}
@@ -64,43 +64,43 @@ A(\tau)=
 -k(\tau)&-2\zeta
 \end{pmatrix},\qquad
 \mathbf{b}=\begin{pmatrix}0\\1\end{pmatrix}.
-$$
+```
 
 La matriz fundamental satisface
 
-$$
+```math
 \Phi'(\tau)=A(\tau)\Phi(\tau),\qquad \Phi(0)=I_2.
-$$
+```
 
 El propagador causal es
 
-$$
+```math
 U(\tau,s)=\Phi(\tau)\Phi(s)^{-1},\qquad \tau\ge s,
-$$
+```
 
 y la respuesta forzada es
 
-$$
+```math
 \mathbf{x}(\tau)=U(\tau,0)\mathbf{x}(0)
 +\int_0^\tau U(\tau,s)\mathbf{b}f(s)\,ds.
-$$
+```
 
 La susceptibilidad material causal normalizada que lleva el forzamiento a la
 polarización es el núcleo de dos tiempos
 
-$$
+```math
 g(\tau,s)=\mathbf e_p^{\mathsf T}U(\tau,s)\mathbf b\,H(\tau-s),
 \qquad
 \mathbf e_p=\begin{pmatrix}1\\0\end{pmatrix}.
-$$
+```
 
 No depende solo del retardo $\tau-s$: el medio recuerda también la fase de la
 modulación en el instante $s$. Como $A(\tau+T)=A(\tau)$, satisface la periodicidad
 conjunta
 
-$$
+```math
 g(\tau+T,s+T)=g(\tau,s).
-$$
+```
 
 Esta es la primera estructura genuinamente espacio-temporal del proyecto. En
 el límite estacionario $m=0$, vuelve a depender únicamente de $\tau-s$.
@@ -109,16 +109,16 @@ el límite estacionario $m=0$, vuelve a depender únicamente de $\tau-s$.
 
 El periodo adimensional es
 
-$$
+```math
 T=\frac{2\pi}{\nu}.
-$$
+```
 
 La matriz monodrómica es $M=\Phi(T)$. Sus autovalores $\lambda_i$ son los
 multiplicadores de Floquet. La tasa exponencial real asociada es
 
-$$
+```math
 g_i=\frac{\log|\lambda_i|}{T}.
-$$
+```
 
 El sistema homogéneo es asintóticamente estable cuando $|\lambda_i|<1$ para
 todo $i$. Los exponentes complejos obtenidos con el logaritmo principal solo
@@ -127,13 +127,13 @@ los módulos, no con una elección arbitraria de rama.
 
 ## 6. Identidad exacta de Liouville
 
-Como $\mathrm{tr}\,A(\tau)=-2\zeta$,
+Como $`\mathrm{tr}\,A(\tau)=-2\zeta`$,
 
-$$
+```math
 \det M
 =\exp\left(\int_0^T\mathrm{tr}\,A(s)\,ds\right)
 =\exp(-2\zeta T).
-$$
+```
 
 Esta identidad es una prueba especialmente sensible de la integración
 numérica. En ausencia de amortiguamiento, $\det M=1$.
@@ -142,24 +142,24 @@ numérica. En ausencia de amortiguamiento, $\det M=1$.
 
 Definimos la energía instantánea adimensional
 
-$$
+```math
 \mathcal{E}(\tau)=\frac12v^2+\frac12k(\tau)p^2.
-$$
+```
 
 Entonces
 
-$$
+```math
 \frac{d\mathcal{E}}{d\tau}
 =-2\zeta v^2
 +\frac12k'(\tau)p^2
 +v f(\tau),
-$$
+```
 
 donde
 
-$$
+```math
 k'(\tau)=-m\nu\sin(\nu\tau+\phi).
-$$
+```
 
 Los tres términos son, respectivamente, disipación, trabajo del bombeo de
 modulación y potencia de la señal aplicada. El modelo no debe interpretar el

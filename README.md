@@ -8,10 +8,10 @@ Maxwell en medios dispersivos y variables en el tiempo.
 El modelo inicial es un oscilador de Lorentz adimensional con frecuencia de
 resonancia modulada periódicamente:
 
-$$
+```math
 p''(\tau)+2\zeta p'(\tau)
 +\left[1+m\cos(\nu\tau+\phi)\right]p(\tau)=f(\tau).
-$$
+```
 
 Aquí, $\tau=\omega_0t$, $\zeta=\gamma/(2\omega_0)$,
 $m$ es la profundidad de modulación y $\nu=\Omega_m/\omega_0$.
@@ -32,15 +32,15 @@ secundaria alrededor de $\nu=1$ para modulaciones más intensas.
 
 Para
 
-$$
+```math
 \zeta=0.02,\qquad m=0.20,\qquad \nu=2,
-$$
+```
 
 el radio espectral satisface
 
-$$
+```math
 \rho(M)\approx1.09865>1.
-$$
+```
 
 La energía aumenta porque el bombeo temporal supera la disipación en una de
 las direcciones de Floquet.
@@ -56,11 +56,11 @@ periodicidad conjunta $g(\tau+T,s+T)=g(\tau,s)$.
 
 Al mover la modulación a $\nu=3$, obtenemos
 
-$$
+```math
 \rho(M)\approx0.95898<1,
 \qquad
 g_{\max}\approx-0.02.
-$$
+```
 
 Este régimen será la referencia para construir el canal armónico de Floquet y
 compararlo con la representación causal en el dominio temporal.

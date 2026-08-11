@@ -6,6 +6,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MARKDOWN_FILES = (ROOT / "README.md", *sorted((ROOT / "docs").glob("*.md")))
 GITHUB_REJECTED_MACROS = (r"\operatorname",)
+PROTECTED_INLINE_MATH = re.compile(r"\$`[^`]*`\$")
+INLINE_CODE = re.compile(r"`[^`]*`")
+INLINE_MATH = re.compile(r"(?<!\\)\$(?!\$)(.+?)(?<!\\)\$")
+COMMONMARK_SENSITIVE_LATEX_ESCAPE = re.compile(
+    r'''\\[!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~]'''
+)
 
 
 def _relative(path: Path) -> str:
@@ -45,6 +51,85 @@ def test_markdown_math_delimiters_are_balanced() -> None:
                 )
 
     assert not failures, "Delimitadores matemáticos desbalanceados:\n" + "\n".join(failures)
+
+
+def test_display_math_uses_github_safe_fences() -> None:
+    failures: list[str] = []
+
+    for path in MARKDOWN_FILES:
+        inside_fence = False
+        fence_language = ""
+        fence_opened_at = 0
+        math_has_content = False
+
+        for line_number, line in enumerate(
+            path.read_text(encoding="utf-8").splitlines(), 1
+        ):
+            stripped = line.lstrip()
+            if stripped.startswith("```"):
+                if not inside_fence:
+                    inside_fence = True
+                    fence_language = stripped[3:].strip()
+                    fence_opened_at = line_number
+                    math_has_content = False
+                else:
+                    if fence_language == "math" and not math_has_content:
+                        failures.append(
+                            f"{_relative(path)}:{fence_opened_at}: bloque math vacío"
+                        )
+                    inside_fence = False
+                    fence_language = ""
+                continue
+
+            if not inside_fence and "$$" in line:
+                failures.append(
+                    f"{_relative(path)}:{line_number}: use ```math en vez de $$"
+                )
+            elif inside_fence and fence_language == "math":
+                if "$$" in line:
+                    failures.append(
+                        f"{_relative(path)}:{line_number}: $$ dentro de bloque math"
+                    )
+                math_has_content = math_has_content or bool(line.strip())
+
+        if inside_fence:
+            failures.append(
+                f"{_relative(path)}:{fence_opened_at}: bloque ``` sin cierre"
+            )
+
+    assert not failures, (
+        "Bloques matemáticos incompatibles con GitHub:\n" + "\n".join(failures)
+    )
+
+
+def test_inline_math_protects_commonmark_sensitive_latex() -> None:
+    failures: list[str] = []
+
+    for path in MARKDOWN_FILES:
+        inside_fence = False
+        for line_number, line in enumerate(
+            path.read_text(encoding="utf-8").splitlines(), 1
+        ):
+            if line.lstrip().startswith("```"):
+                inside_fence = not inside_fence
+                continue
+            if inside_fence:
+                continue
+
+            unprotected = PROTECTED_INLINE_MATH.sub("", line)
+            unprotected = INLINE_CODE.sub("", unprotected)
+            for match in INLINE_MATH.finditer(unprotected):
+                escape = COMMONMARK_SENSITIVE_LATEX_ESCAPE.search(match.group(1))
+                if escape:
+                    failures.append(
+                        f"{_relative(path)}:{line_number}: {escape.group()} debe usar "
+                        "$`...`$"
+                    )
+
+    assert not failures, (
+        "GitHub consume escapes LaTeX dentro de matemática inline sin proteger:\n"
+        + "\n".join(failures)
+    )
 
 
 def test_markdown_latex_environments_are_nested_and_balanced() -> None:
